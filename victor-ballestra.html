@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victor Ballestra — Life Insurance & Will Writing</title>
+  <meta name="description" content="Life insurance, will writing, and estate planning made simple, human, and affordable. Protect your family's future with Victor Ballestra. FCA regulated. 5-star rated.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fraunces: warmth + trust at display sizes. Manrope: clean modern legibility for body. -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────────────
+       DESIGN TOKENS
+    ───────────────────────────────────────────── */
+    :root {
+      --forest:     #091B33;
+      --forest-mid: #0D2244;
+      --forest-lt:  #163468;
+      --cream:      #EEF3FC;
+      --sand:       #DDE8F7;
+      --parchment:  #F2F7FD;
+      --moss:       #152840;
+      --muted:      #486080;
+      --gold:       #B8904A;
+      --gold-lt:    #D4A962;
+      --gold-dim:   #8A6A34;
+      --sage:       #4B87C5;
+      --sage-lt:    #95C0E5;
+      --white:      #FFFFFF;
+      --hero-text:  #EBF3FF;
+
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body:    'Manrope', system-ui, sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 28px;
+      --radius-xl: 48px;
+
+      --shadow-sm: 0 2px 12px rgba(9,27,51,0.06);
+      --shadow-md: 0 8px 32px rgba(9,27,51,0.10);
+      --shadow-lg: 0 20px 60px rgba(9,27,51,0.14);
+
+      --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      --section-v: clamp(5rem, 10vw, 8rem);
+      --container: min(1180px, 100% - 3rem);
+    }
+
+    /* ─────────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--moss);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ─────────────────────────────────────────────
+       TYPOGRAPHY SCALE
+    ───────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
+
+    h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
+
+    p { font-size: clamp(1rem, 1.2vw, 1.1rem); }
+
+    .section-lead {
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      color: var(--muted);
+      max-width: 54ch;
+    }
+
+    /* ─────────────────────────────────────────────
+       LAYOUT HELPERS
+    ───────────────────────────────────────────── */
+    .container {
+      width: var(--container);
+      margin-inline: auto;
+    }
+
+    .section-pad {
+      padding-block: var(--section-v);
+    }
+
+    .section-header {
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+
+    .section-header h2 { margin-bottom: 1.2rem; }
+
+    /* ─────────────────────────────────────────────
+       BUTTONS
+    ───────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), background 0.2s;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(184,144,74,0.35);
+    }
+    .btn-gold:hover {
+      background: var(--gold-lt);
+      box-shadow: 0 8px 28px rgba(184,144,74,0.45);
+    }
+
+    .btn-ghost-light {
+      background: transparent;
+      color: var(--hero-text);
+      border: 1.5px solid rgba(235,243,255,0.35);
+    }
+    .btn-ghost-light:hover {
+      background: rgba(235,243,255,0.08);
+      border-color: rgba(235,243,255,0.6);
+    }
+
+    .btn-outline-forest {
+      background: transparent;
+      color: var(--forest);
+      border: 1.5px solid var(--forest);
+    }
+    .btn-outline-forest:hover {
+      background: var(--forest);
+      color: var(--cream);
+    }
+
+    .btn-sm {
+      padding: 0.65rem 1.4rem;
+      font-size: 0.875rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background 0.4s var(--ease-out), padding 0.4s var(--ease-out), box-shadow 0.4s;
+      padding-block: 1.5rem;
+    }
+
+    #nav.scrolled {
+      background: rgba(9,27,51,0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding-block: 1rem;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--hero-text);
+      flex-shrink: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo-icon { width: 32px; height: 32px; flex-shrink: 0; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-left: auto;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(235,243,255,0.78);
+      padding: 0.4rem 0.85rem;
+      border-radius: 100px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--hero-text);
+      background: rgba(235,243,255,0.08);
+    }
+
+    .nav-cta { flex-shrink: 0; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+      margin-left: auto;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--hero-text);
+      border-radius: 2px;
+      transition: transform 0.3s var(--ease-out), opacity 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile overlay */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: var(--forest);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s var(--ease-out);
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--hero-text);
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ─────────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      background: var(--forest);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 7rem;
+      padding-bottom: 4rem;
+      overflow: hidden;
+    }
+
+    /* Animated background orbs */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+    }
+
+    .orb-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(75,135,197,0.22) 0%, transparent 70%);
+      top: -200px; right: -180px;
+      animation: orb-1 22s ease-in-out infinite;
+    }
+
+    .orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(184,144,74,0.14) 0%, transparent 70%);
+      bottom: -100px; left: -80px;
+      animation: orb-2 18s ease-in-out infinite;
+    }
+
+    .orb-3 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(75,135,197,0.12) 0%, transparent 70%);
+      top: 40%; left: 30%;
+      animation: orb-3 26s ease-in-out infinite;
+    }
+
+    @keyframes orb-1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%  { transform: translate(-60px, 80px) scale(1.1); }
+      66%  { transform: translate(40px, -50px) scale(0.95); }
+    }
+    @keyframes orb-2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%  { transform: translate(80px, -60px) scale(1.15); }
+    }
+    @keyframes orb-3 {
+      0%, 100% { transform: translate(0, 0); }
+      40%  { transform: translate(-80px, 60px); }
+      70%  { transform: translate(60px, -40px); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(3rem, 6vw, 5rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      color: var(--sage-lt);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    /* The aesthetic risk: extreme weight contrast within one headline */
+    .hero-headline {
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--hero-text);
+      line-height: 1.08;
+      margin-bottom: 1.8rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-headline .word { display: inline-block; overflow: hidden; }
+    .hero-headline .word-inner { display: inline-block; }
+
+    /* "protected." in gold — the emotional peak word */
+    .hero-headline .accent-word { color: var(--gold); }
+
+    /* Weight contrast: the setup is light, the promise is bold */
+    .hero-headline .light-line { font-weight: 300; }
+    .hero-headline .strong-line { font-weight: 600; }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      color: rgba(235,243,255,0.72);
+      line-height: 1.7;
+      max-width: 46ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(235,243,255,0.60);
+    }
+
+    .trust-badge svg {
+      width: 16px; height: 16px;
+      flex-shrink: 0;
+      color: var(--sage-lt);
+    }
+
+    /* Hero shield SVG */
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-shield-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      animation: hero-float 7s ease-in-out infinite;
+    }
+
+    @keyframes hero-float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-18px); }
+    }
+
+    .hero-shield-svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.3));
+    }
+
+    /* Scroll cue */
+    .scroll-cue {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(235,243,255,0.35);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      z-index: 2;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(235,243,255,0.35), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-pulse {
+      0%, 100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+      50% { opacity: 0.4; transform: scaleY(0.7); transform-origin: top; }
+    }
+
+    /* ─────────────────────────────────────────────
+       TRUST BAR
+    ───────────────────────────────────────────── */
+    .trust-bar {
+      background: var(--cream);
+      border-bottom: 1px solid rgba(21,40,64,0.08);
+      padding-block: 3.5rem;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .stat {
+      text-align: center;
+      padding-inline: 1rem;
+    }
+
+    .stat + .stat {
+      border-left: 1px solid rgba(21,40,64,0.10);
+    }
+
+    .stat-number-wrap {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-prefix,
+    .stat-number,
+    .stat-suffix {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 600;
+      color: var(--forest);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+    }
+
+    .stat-fca {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .fca-badge-svg {
+      width: 54px;
+      height: auto;
+    }
+
+    /* ─────────────────────────────────────────────
+       SERVICES
+    ───────────────────────────────────────────── */
+    .services-section {
+      background: var(--parchment);
+      padding-block: var(--section-v);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(21,40,64,0.06);
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sage), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-out);
+    }
+
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(75,135,197,0.15), rgba(184,144,74,0.10));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-icon svg { width: 26px; height: 26px; color: var(--sage); }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: var(--forest);
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    .card-link {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s var(--ease-out), color 0.2s;
+    }
+
+    .card-link:hover { gap: 0.7rem; color: var(--gold-dim); }
+
+    /* ─────────────────────────────────────────────
+       HOW IT WORKS
+    ───────────────────────────────────────────── */
+    .how-section {
+      background: var(--forest);
+      color: var(--hero-text);
+      padding-block: var(--section-v);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .how-section .eyebrow { color: var(--sage-lt); }
+    .how-section h2 { color: var(--hero-text); }
+
+    .steps-outer { position: relative; }
+
+    /* The animated SVG connector between steps */
+    .steps-svg-connector {
+      position: absolute;
+      top: 52px;
+      left: 0; right: 0;
+      width: 100%;
+      height: 60px;
+      pointer-events: none;
+    }
+
+    .steps-svg-connector path {
+      fill: none;
+      stroke: var(--sage);
+      stroke-width: 1.5;
+      stroke-dasharray: 8 6;
+      opacity: 0.5;
+    }
+
+    .connector-animated {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      stroke-dasharray: unset;
+      opacity: 0.7;
+      stroke: var(--sage-lt);
+      stroke-width: 2;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-inline: 1.5rem;
+    }
+
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.8rem;
+      position: relative;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 8px rgba(184,144,74,0.15), 0 0 0 16px rgba(184,144,74,0.06);
+    }
+
+    .step h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--hero-text);
+      margin-bottom: 0.8rem;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: rgba(235,243,255,0.65);
+      line-height: 1.7;
+    }
+
+    /* ─────────────────────────────────────────────
+       WHY US
+    ───────────────────────────────────────────── */
+    .why-section {
+      background: var(--cream);
+      padding-block: var(--section-v);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .why-card {
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(21,40,64,0.08);
+      background: var(--white);
+      transition: border-color 0.3s, box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+    }
+
+    .why-card:hover {
+      border-color: rgba(75,135,197,0.3);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-4px);
+    }
+
+    .why-icon {
+      width: 44px; height: 44px;
+      border-radius: var(--radius-sm);
+      background: rgba(75,135,197,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .why-icon svg { width: 22px; height: 22px; color: var(--sage); }
+
+    .why-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: var(--forest);
+    }
+
+    .why-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─────────────────────────────────────────────
+       TESTIMONIALS
+    ───────────────────────────────────────────── */
+    .reviews-section {
+      background: var(--sand);
+      padding-block: var(--section-v);
+      overflow: hidden;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s var(--ease-out);
+      will-change: transform;
+    }
+
+    .review-card {
+      min-width: 100%;
+      padding: clamp(2rem, 4vw, 3.5rem);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 1.5rem;
+    }
+
+    .star { color: var(--gold); font-size: 1.1rem; }
+
+    .review-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--moss);
+      margin-bottom: 2rem;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sage), var(--forest));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--cream);
+      flex-shrink: 0;
+    }
+
+    .author-info strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    .author-info span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .carousel-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(21,40,64,0.18);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+
+    .carousel-btn:hover {
+      background: var(--forest);
+      border-color: var(--forest);
+      transform: scale(1.08);
+    }
+
+    .carousel-btn:hover svg { color: var(--white); }
+
+    .carousel-btn svg { width: 18px; height: 18px; color: var(--forest); transition: color 0.2s; }
+
+    .carousel-dots { display: flex; gap: 8px; }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(21,40,64,0.2);
+      transition: background 0.3s, transform 0.3s var(--ease-spring);
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: var(--gold);
+      transform: scale(1.3);
+    }
+
+    /* ─────────────────────────────────────────────
+       PRICING
+    ───────────────────────────────────────────── */
+    .pricing-section {
+      background: var(--parchment);
+      padding-block: var(--section-v);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      border: 1.5px solid rgba(21,40,64,0.08);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pricing-card.featured {
+      background: var(--forest);
+      border-color: transparent;
+      color: var(--hero-text);
+      transform: scale(1.03);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.03) translateY(-6px);
+    }
+
+    .pricing-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+      margin-bottom: 1.2rem;
+    }
+
+    .pricing-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .pricing-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .pricing-card.featured .pricing-desc { color: rgba(235,243,255,0.65); }
+
+    .pricing-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .price-from { font-size: 0.78rem; color: var(--muted); }
+    .pricing-card.featured .price-from { color: rgba(235,243,255,0.6); }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--forest);
+    }
+
+    .pricing-card.featured .price-amount { color: var(--gold); }
+
+    .price-period { font-size: 0.85rem; color: var(--muted); }
+    .pricing-card.featured .price-period { color: rgba(235,243,255,0.6); }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features li {
+      display: flex;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+      align-items: flex-start;
+    }
+
+    .pricing-features li::before {
+      content: '';
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: rgba(75,135,197,0.15);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%236B9E8A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: contain;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pricing-card.featured .pricing-features li::before {
+      background-color: rgba(75,135,197,0.25);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%23A8CBBF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    /* ─────────────────────────────────────────────
+       FAQ
+    ───────────────────────────────────────────── */
+    .faq-section {
+      background: var(--cream);
+      padding-block: var(--section-v);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(21,40,64,0.10);
+    }
+
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 1.35rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--forest);
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .faq-q:hover { color: var(--gold-dim); }
+
+    .faq-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(21,40,64,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, border-color 0.2s, transform 0.35s var(--ease-out);
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: rotate(45deg);
+    }
+
+    .faq-icon svg { width: 12px; height: 12px; color: var(--forest); transition: color 0.2s; }
+    .faq-item.open .faq-icon svg { color: #fff; }
+
+    .faq-a {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s var(--ease-out);
+    }
+
+    .faq-a-inner {
+      padding-bottom: 1.4rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ─────────────────────────────────────────────
+       FINAL CTA
+    ───────────────────────────────────────────── */
+    .cta-section {
+      background: var(--forest);
+      padding-block: var(--section-v);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section .orb-1 {
+      opacity: 0.5;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 700px;
+      margin-inline: auto;
+    }
+
+    .cta-headline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: var(--hero-text);
+      line-height: 1.18;
+      margin-bottom: 1.4rem;
+    }
+
+    .cta-headline strong {
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: rgba(235,243,255,0.65);
+      margin-bottom: 2.5rem;
+      max-width: 46ch;
+      margin-inline: auto;
+    }
+
+    .cta-note {
+      margin-top: 1.2rem;
+      font-size: 0.78rem;
+      color: rgba(235,243,255,0.35);
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    .footer {
+      background: var(--forest-mid);
+      color: rgba(235,243,255,0.55);
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(235,243,255,0.08);
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 32ch;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--hero-text);
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(235,243,255,0.4);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.65rem; }
+
+    .footer-col a {
+      font-size: 0.875rem;
+      color: rgba(235,243,255,0.6);
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--gold-lt); }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer-legal {
+      font-size: 0.76rem;
+      line-height: 1.7;
+      max-width: 65ch;
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    /* ─────────────────────────────────────────────
+       ANIMATION INITIAL STATES
+       (Elements that will be revealed by GSAP)
+    ───────────────────────────────────────────── */
+    .gsap-fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+
+    .hero-word { opacity: 0; transform: translateY(20px); }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat + .stat { border-left: none; }
+      .stat:nth-child(3) { border-top: 1px solid rgba(21,40,64,0.10); }
+      .stat:nth-child(4) { border-top: 1px solid rgba(21,40,64,0.10); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+      .pricing-card.featured { transform: none; }
+      .pricing-card.featured:hover { transform: translateY(-6px); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-sub { max-width: 100%; }
+      .services-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .steps-svg-connector { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .trust-bar { padding-block: 2.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-grid { grid-template-columns: 1fr; }
+      .stat + .stat { border-left: none; border-top: 1px solid rgba(21,40,64,0.10); }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* ─────────────────────────────────────────────
+       REDUCED MOTION
+    ───────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .orb { animation: none !important; }
+      .hero-shield-wrap { animation: none !important; }
+      .scroll-line { animation: none !important; }
+      .gsap-fade-up { opacity: 1 !important; transform: none !important; }
+      .hero-word { opacity: 1 !important; transform: none !important; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .carousel-track { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <nav id="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo" aria-label="Victor Ballestra — home">
+        <!-- Shield logo mark -->
+        <svg class="nav-logo-icon" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 2C16 2 28 6 28 14C28 24 16 34 16 34C16 34 4 24 4 14C4 6 16 2 16 2Z" fill="none" stroke="#4B87C5" stroke-width="2"/>
+          <path d="M16 28V14M10 20C12 18 14 17 16 16M22 20C20 18 18 17 16 16" stroke="#B8904A" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="10.5" cy="19" r="2.5" fill="#B8904A" opacity="0.7"/>
+          <circle cx="21.5" cy="19" r="2.5" fill="#B8904A" opacity="0.7"/>
+          <circle cx="16" cy="12" r="3" fill="#B8904A"/>
+        </svg>
+        Victor Ballestra
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#why-us">Why us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#quote" class="btn btn-gold btn-sm">Get a free quote</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#how-it-works" class="mobile-link">How it works</a>
+    <a href="#why-us" class="mobile-link">Why us</a>
+    <a href="#reviews" class="mobile-link">Reviews</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#quote" class="btn btn-gold" style="margin-top:1rem;">Get a free quote</a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <section class="hero" id="hero" aria-labelledby="hero-headline">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container hero-grid">
+      <!-- Copy -->
+      <div class="hero-content">
+        <p class="hero-eyebrow" id="hero-eyebrow">Life insurance &amp; will writing</p>
+
+        <h1 class="hero-headline" id="hero-headline">
+          <span class="light-line">
+            <span class="hero-word">Your</span>
+            <span class="hero-word">family's</span>
+            <span class="hero-word">future,</span>
+          </span><br>
+          <span class="strong-line">
+            <span class="hero-word">beautifully</span>
+            <span class="hero-word accent-word">protected.</span>
+          </span>
+        </h1>
+
+        <p class="hero-sub gsap-fade-up">
+          Life cover and legal peace of mind, made human. We guide you from first question to fully sorted — no jargon, no pressure, no paperwork headaches.
+        </p>
+
+        <div class="hero-ctas gsap-fade-up">
+          <a href="#quote" class="btn btn-gold">Get a free quote</a>
+          <a href="#how-it-works" class="btn btn-ghost-light">See how it works</a>
+        </div>
+
+        <div class="hero-trust gsap-fade-up">
+          <div class="trust-badge">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 1L14 3.5V8C14 11.5 11 14.5 8 15.5C5 14.5 2 11.5 2 8V3.5L8 1Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            FCA regulated
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10.1 4.4 12l.7-4L2.2 5.2l4-.6L8 1z"/>
+            </svg>
+            5-star rated
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="3" y="7" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            Your data is safe
+          </div>
+        </div>
+      </div>
+
+      <!-- Shield illustration -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-shield-wrap">
+          <svg class="hero-shield-svg" viewBox="0 0 380 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer glow ring -->
+            <ellipse cx="190" cy="230" rx="155" ry="185" fill="rgba(75,135,197,0.05)"/>
+            <ellipse cx="190" cy="230" rx="130" ry="160" fill="rgba(75,135,197,0.05)"/>
+
+            <!-- Shield body fill -->
+            <path d="M190 28 C190 28 338 70 338 158 C338 284 190 400 190 400 C190 400 42 284 42 158 C42 70 190 28 190 28Z"
+                  fill="rgba(75,135,197,0.06)"/>
+
+            <!-- Shield outline — drawn by GSAP on load -->
+            <path class="draw-shield" id="shield-outline"
+                  d="M190 28 C190 28 338 70 338 158 C338 284 190 400 190 400 C190 400 42 284 42 158 C42 70 190 28 190 28Z"
+                  stroke="#4B87C5" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+            <!-- Inner shield detail line -->
+            <path class="draw-shield" id="shield-inner"
+                  d="M190 52 C190 52 314 86 314 162 C314 274 190 374 190 374 C190 374 66 274 66 162 C66 86 190 52 190 52Z"
+                  stroke="#4B87C5" stroke-width="0.75" fill="none" opacity="0.3"/>
+
+            <!-- Tree: roots (gold) -->
+            <path class="draw-tree draw-root" d="M190 350 Q162 362 138 378 Q118 390 98 400" stroke="#B8904A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path class="draw-tree draw-root" d="M190 350 Q215 362 240 378 Q262 390 282 400" stroke="#B8904A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path class="draw-tree draw-root" d="M190 350 Q175 368 162 382 Q150 393 136 402" stroke="#B8904A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+            <path class="draw-tree draw-root" d="M190 350 Q205 368 218 382 Q230 393 244 402" stroke="#B8904A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+            <!-- Tree: trunk -->
+            <path class="draw-tree draw-trunk" d="M190 350 C188 308 187 265 190 195" stroke="#95C0E5" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+            <!-- Tree: branches -->
+            <path class="draw-tree draw-branch" d="M189 275 Q162 252 124 238" stroke="#95C0E5" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path class="draw-tree draw-branch" d="M190 268 Q218 248 256 238" stroke="#95C0E5" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path class="draw-tree draw-branch" d="M190 235 Q166 215 136 204" stroke="#95C0E5" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path class="draw-tree draw-branch" d="M190 235 Q215 215 244 206" stroke="#95C0E5" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path class="draw-tree draw-branch" d="M190 210 Q174 192 152 183" stroke="#95C0E5" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+            <path class="draw-tree draw-branch" d="M190 210 Q206 192 228 185" stroke="#95C0E5" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+
+            <!-- Tree: leaf clusters (fade in after branches) -->
+            <circle class="draw-leaf" cx="112" cy="232" r="20" fill="rgba(184,144,74,0.75)"/>
+            <circle class="draw-leaf" cx="262" cy="232" r="18" fill="rgba(184,144,74,0.70)"/>
+            <circle class="draw-leaf" cx="126" cy="196" r="18" fill="rgba(184,144,74,0.80)"/>
+            <circle class="draw-leaf" cx="248" cy="198" r="17" fill="rgba(184,144,74,0.75)"/>
+            <circle class="draw-leaf" cx="144" cy="174" r="16" fill="rgba(75,135,197,0.85)"/>
+            <circle class="draw-leaf" cx="234" cy="176" r="15" fill="rgba(75,135,197,0.80)"/>
+            <circle class="draw-leaf" cx="190" cy="155" r="24" fill="rgba(75,135,197,0.90)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       TRUST BAR
+  ════════════════════════════════════════════ -->
+  <section class="trust-bar" aria-label="Trust statistics">
+    <div class="container trust-grid">
+      <div class="stat">
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-target="14000" data-suffix="+" data-separator=",">0</span>
+        </div>
+        <p class="stat-label">Families protected</p>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number-wrap">
+          <span class="stat-prefix">£</span>
+          <span class="stat-number" data-target="600" data-suffix="m+">0</span>
+        </div>
+        <p class="stat-label">In cover arranged</p>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-target="49" data-display-as="4.9" data-suffix="&#x2F;5">0</span>
+        </div>
+        <p class="stat-label">Average review score</p>
+      </div>
+
+      <div class="stat stat-fca">
+        <!-- FCA badge SVG -->
+        <svg class="fca-badge-svg" viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="FCA Regulated">
+          <rect width="80" height="36" rx="6" fill="#091B33"/>
+          <text x="10" y="14" font-family="Manrope,sans-serif" font-size="7" font-weight="700" fill="#95C0E5" letter-spacing="1">REGULATED BY</text>
+          <text x="10" y="28" font-family="Manrope,sans-serif" font-size="13" font-weight="700" fill="#EBF3FF" letter-spacing="0.5">FCA</text>
+          <path d="M62 10 L72 18 L62 26" stroke="#B8904A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <p class="stat-label">Authorised &amp; regulated</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES
+  ════════════════════════════════════════════ -->
+  <section class="services-section" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header gsap-fade-up">
+        <p class="eyebrow">What we do</p>
+        <h2 id="services-heading">Protection for every chapter</h2>
+        <p class="section-lead">Whether you need life cover, a legally valid will, or a full estate plan — we make it clear, simple, and done.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Life Insurance -->
+        <article class="service-card gsap-fade-up">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none">
+              <path d="M13 2L22 6.5V13C22 18.5 17.5 23 13 24C8.5 23 4 18.5 4 13V6.5L13 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M9 13l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Life Insurance</h3>
+          <p>If the worst happens, your family's mortgage, bills, and future plans stay protected — not put on hold. We find the right level of cover at a price that makes sense.</p>
+          <a href="#quote" class="card-link">Find my cover <span aria-hidden="true">→</span></a>
+        </article>
+
+        <!-- Will Writing -->
+        <article class="service-card gsap-fade-up">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none">
+              <path d="M8 3H18C19.1 3 20 3.9 20 5V21C20 22.1 19.1 23 18 23H8C6.9 23 6 22.1 6 21V5C6 3.9 6.9 3 8 3Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M9 8h8M9 12h8M9 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="18" cy="19" r="4" fill="#F4F0E6" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16.5 19l1 1 2-2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Will Writing</h3>
+          <p>Make sure your wishes are heard, clearly and legally. A will isn't just paperwork — it's the most loving thing you can leave behind. We make it simple to get right.</p>
+          <a href="#quote" class="card-link">Write my will <span aria-hidden="true">→</span></a>
+        </article>
+
+        <!-- Estate Planning -->
+        <article class="service-card gsap-fade-up">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none">
+              <path d="M13 3 Q7 8 7 14 C7 19 10 23 13 24 C16 23 19 19 19 14 Q19 8 13 3Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M13 24V14M13 14L9 18M13 14L17 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 11 Q10 9 13 9 Q16 9 18 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+            </svg>
+          </div>
+          <h3>Estate &amp; Legacy Planning</h3>
+          <p>Pass on what you've built, the way you intend. We help you protect your assets, reduce inheritance tax exposure, and leave a legacy that reflects your values.</p>
+          <a href="#quote" class="card-link">Plan my legacy <span aria-hidden="true">→</span></a>
+        </article>
+
+        <!-- LPA -->
+        <article class="service-card gsap-fade-up">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none">
+              <circle cx="13" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M5 22C5 17.6 8.6 14 13 14C17.4 14 21 17.6 21 22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M18 5l2 2-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+            </svg>
+          </div>
+          <h3>Lasting Power of Attorney</h3>
+          <p>Stay in control, even if life changes. An LPA lets the people you trust make decisions on your behalf if you're ever unable to do so yourself. Set it up before you need it.</p>
+          <a href="#quote" class="card-link">Set up an LPA <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       HOW IT WORKS
+  ════════════════════════════════════════════ -->
+  <section class="how-section" id="how-it-works" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="section-header gsap-fade-up" style="text-align:center;">
+        <p class="eyebrow">The process</p>
+        <h2 id="how-heading">From "where do I start?" <br>to fully sorted</h2>
+      </div>
+
+      <div class="steps-outer">
+        <!-- SVG connector — desktop only, animated by ScrollTrigger -->
+        <svg class="steps-svg-connector" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true">
+          <!-- Static dashed background path -->
+          <path d="M 80 30 C 250 10, 380 55, 500 30 S 760 10, 920 30" stroke="#2A5040" stroke-width="1.5" fill="none" stroke-dasharray="6 5"/>
+          <!-- Animated drawn path -->
+          <path id="connector-path" class="connector-animated" d="M 80 30 C 250 10, 380 55, 500 30 S 760 10, 920 30" stroke="#4B87C5" stroke-width="2" fill="none"/>
+        </svg>
+
+        <div class="steps-grid">
+          <div class="step gsap-fade-up">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3>Free 30-minute chat</h3>
+            <p>No pressure, no jargon. Just a friendly conversation about what matters to you — your family, your home, your wishes for the future.</p>
+          </div>
+
+          <div class="step gsap-fade-up">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3>Your personalised plan</h3>
+            <p>We find the right cover and documents for your situation, explain every option clearly, and give you a quote with no hidden costs.</p>
+          </div>
+
+          <div class="step gsap-fade-up">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3>Protected and sorted</h3>
+            <p>Sign digitally, store everything securely in your Victor Ballestra account. Done. You can update your documents any time as life changes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:3.5rem;" class="gsap-fade-up">
+        <a href="#quote" class="btn btn-gold">Start with a free chat</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       WHY US
+  ════════════════════════════════════════════ -->
+  <section class="why-section" id="why-us" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="section-header gsap-fade-up">
+        <p class="eyebrow">Why Victor Ballestra</p>
+        <h2 id="why-heading">Designed around you,<br>not around paperwork</h2>
+        <p class="section-lead">We built Victor Ballestra because the people who need protection most often feel most overwhelmed by the process of getting it.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card gsap-fade-up">
+          <div class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none">
+              <path d="M4 11l4 4 10-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>No jargon, ever</h3>
+          <p>We translate complex insurance and legal terms into plain English. If you have a question, you'll always get a clear, honest answer.</p>
+        </div>
+
+        <div class="why-card gsap-fade-up">
+          <div class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none">
+              <circle cx="11" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M4 19c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Real human advisers</h3>
+          <p>You'll speak to a qualified, experienced adviser — not a chatbot. Someone who listens, understands your situation, and genuinely cares about getting it right.</p>
+        </div>
+
+        <div class="why-card gsap-fade-up">
+          <div class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none">
+              <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M11 7v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Fast &amp; fully online</h3>
+          <p>Complete your application in as little as 20 minutes, from your sofa. No waiting rooms, no endless forms — just a smooth digital process from start to finish.</p>
+        </div>
+
+        <div class="why-card gsap-fade-up">
+          <div class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none">
+              <path d="M6 10h10M6 14h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M3 6C3 4.9 3.9 4 5 4h12c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V6Z" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <h3>Clear, fixed pricing</h3>
+          <p>We tell you exactly what you'll pay upfront. No surprise fees, no commission-driven upsells. Will writing starts from a fixed fee, clearly stated before you commit.</p>
+        </div>
+
+        <div class="why-card gsap-fade-up">
+          <div class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none">
+              <path d="M11 2L19 5.5V11C19 15.5 15.5 19.5 11 21C6.5 19.5 3 15.5 3 11V5.5L11 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M7.5 11l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>FCA regulated &amp; secure</h3>
+          <p>Victor Ballestra is authorised and regulated by the Financial Conduct Authority. Your data is encrypted, your policy is legally protected, and your information stays private.</p>
+        </div>
+
+        <div class="why-card gsap-fade-up">
+          <div class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="currentColor">
+              <path d="M11 2l2.1 5.4H19l-4.5 3.3 1.7 5.3L11 13l-5.2 3 1.7-5.3L3 7.4h5.9L11 2z"/>
+            </svg>
+          </div>
+          <h3>5-star rated</h3>
+          <p>Over 14,000 families trust Victor Ballestra. Our advisers are rated 4.9 out of 5 across thousands of independent reviews — because doing right by people is all that matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════════════ -->
+  <section class="reviews-section" id="reviews" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="section-header gsap-fade-up" style="text-align:center;">
+        <p class="eyebrow">Reviews</p>
+        <h2 id="reviews-heading">Families like yours,<br>properly sorted</h2>
+      </div>
+
+      <div class="carousel-wrapper gsap-fade-up" role="region" aria-label="Customer reviews" aria-roledescription="carousel">
+        <div class="carousel-track" id="carousel-track" aria-live="polite">
+
+          <div class="review-card" role="group" aria-roledescription="slide" aria-label="Review 1 of 5">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+            </div>
+            <p class="review-quote">"We'd been putting off sorting our wills for years — it always felt complicated and a bit daunting. Victor Ballestra made the whole thing feel straightforward and, honestly, quite reassuring. Done in an afternoon."</p>
+            <div class="review-author">
+              <div class="author-avatar" aria-hidden="true">SM</div>
+              <div class="author-info">
+                <strong>Sarah &amp; Mark T.</strong>
+                <span>Bristol · Life insurance &amp; wills</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" role="group" aria-roledescription="slide" aria-label="Review 2 of 5">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+            </div>
+            <p class="review-quote">"Our adviser was brilliant — patient, thorough, and never once made us feel silly for not knowing what a trust was. We now have a proper plan in place and I sleep better for it."</p>
+            <div class="review-author">
+              <div class="author-avatar" aria-hidden="true">DP</div>
+              <div class="author-info">
+                <strong>David &amp; Priya L.</strong>
+                <span>Manchester · Estate planning</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" role="group" aria-roledescription="slide" aria-label="Review 3 of 5">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+            </div>
+            <p class="review-quote">"After my dad passed without a will, I promised myself I'd sort one quickly. Victor Ballestra had mine written, reviewed by a solicitor, and stored digitally within a week. Exactly what I needed."</p>
+            <div class="review-author">
+              <div class="author-avatar" aria-hidden="true">TW</div>
+              <div class="author-info">
+                <strong>Tom W.</strong>
+                <span>Edinburgh · Will writing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" role="group" aria-roledescription="slide" aria-label="Review 4 of 5">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+            </div>
+            <p class="review-quote">"Setting up a Lasting Power of Attorney for my mum felt overwhelming before I spoke to Victor Ballestra. They walked me through every decision and made the process genuinely manageable. Couldn't recommend enough."</p>
+            <div class="review-author">
+              <div class="author-avatar" aria-hidden="true">RH</div>
+              <div class="author-info">
+                <strong>Rachel H.</strong>
+                <span>London · Lasting Power of Attorney</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" role="group" aria-roledescription="slide" aria-label="Review 5 of 5">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+            </div>
+            <p class="review-quote">"We have two young children and a mortgage. Getting proper life insurance sorted felt urgent but we'd kept delaying it. Victor Ballestra made the process painless and the monthly cost was far less than we'd expected."</p>
+            <div class="review-author">
+              <div class="author-avatar" aria-hidden="true">JC</div>
+              <div class="author-info">
+                <strong>James &amp; Claire B.</strong>
+                <span>Leeds · Life insurance</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /carousel-track -->
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prev-btn" aria-label="Previous review">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" role="tablist" aria-label="Review slides">
+          <button class="dot active" role="tab" aria-selected="true" aria-label="Review 1" data-index="0"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Review 2" data-index="1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Review 3" data-index="2"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Review 4" data-index="3"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Review 5" data-index="4"></button>
+        </div>
+        <button class="carousel-btn" id="next-btn" aria-label="Next review">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PRICING
+  ════════════════════════════════════════════ -->
+  <section class="pricing-section" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="section-header gsap-fade-up" style="text-align:center;">
+        <p class="eyebrow">Plans &amp; pricing</p>
+        <h2 id="pricing-heading">Simple, transparent pricing.<br>No surprises.</h2>
+        <p class="section-lead" style="margin-inline:auto; text-align:center;">Every plan includes a free 30-minute consultation. You'll know exactly what you're paying before you commit to anything.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="pricing-card gsap-fade-up">
+          <p class="pricing-name">Protect</p>
+          <p class="pricing-desc">Life insurance for individuals and families</p>
+          <div class="pricing-price">
+            <span class="price-from">from</span>
+            <span class="price-amount">£8</span>
+            <span class="price-period">/month</span>
+          </div>
+          <ul class="pricing-features">
+            <li>Up to £1m in life cover</li>
+            <li>Level or decreasing term options</li>
+            <li>Apply in under 20 minutes</li>
+            <li>FCA-regulated advice included</li>
+            <li>Instant online decision</li>
+          </ul>
+          <a href="#quote" class="btn btn-outline-forest" style="width:100%; justify-content:center;">Get started</a>
+        </div>
+
+        <!-- Family Plan (featured) -->
+        <div class="pricing-card featured gsap-fade-up">
+          <span class="pricing-tag">Most popular</span>
+          <p class="pricing-name" style="color:var(--hero-text);">Protect &amp; Plan</p>
+          <p class="pricing-desc">Life insurance plus legally valid wills</p>
+          <div class="pricing-price">
+            <span class="price-from" style="color:rgba(235,243,255,0.6);">from</span>
+            <span class="price-amount">£19</span>
+            <span class="price-period">/month</span>
+          </div>
+          <ul class="pricing-features" style="color:rgba(235,243,255,0.85);">
+            <li>Everything in Protect</li>
+            <li>Single or mirror wills included</li>
+            <li>Nominated guardians for children</li>
+            <li>Solicitor review included</li>
+            <li>Secure digital storage</li>
+            <li>Update your will anytime</li>
+          </ul>
+          <a href="#quote" class="btn btn-gold" style="width:100%; justify-content:center;">Get started</a>
+        </div>
+
+        <!-- Legacy -->
+        <div class="pricing-card gsap-fade-up">
+          <p class="pricing-name">Legacy</p>
+          <p class="pricing-desc">Complete estate and legacy planning</p>
+          <div class="pricing-price">
+            <span class="price-from">one-off from</span>
+            <span class="price-amount" style="font-size:2.2rem;">£499</span>
+          </div>
+          <ul class="pricing-features">
+            <li>Everything in Protect &amp; Plan</li>
+            <li>Lasting Power of Attorney</li>
+            <li>Inheritance tax review</li>
+            <li>Trust setup if applicable</li>
+            <li>Dedicated case manager</li>
+            <li>Annual review call</li>
+          </ul>
+          <a href="#quote" class="btn btn-outline-forest" style="width:100%; justify-content:center;">Talk to an adviser</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FAQ
+  ════════════════════════════════════════════ -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="faq-grid">
+        <!-- Left: header -->
+        <div class="gsap-fade-up">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-heading">Things people<br>usually ask us</h2>
+          <p class="section-lead" style="margin-top:1.2rem;">Can't find your answer here? Our advisers are available Monday–Friday, 9am–6pm.</p>
+          <a href="#quote" class="btn btn-outline-forest" style="margin-top:2rem;">Speak to an adviser</a>
+        </div>
+
+        <!-- Right: accordion -->
+        <div class="faq-list gsap-fade-up" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" aria-expanded="false" id="faq-1" aria-controls="faq-1-a">
+              Is my will legally valid in England &amp; Wales?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-a" id="faq-1-a" role="region" aria-labelledby="faq-1">
+              <div class="faq-a-inner">Yes. Every will prepared by Victor Ballestra is drafted by a qualified will writer and reviewed by a practising solicitor. It meets all requirements under the Wills Act 1837 and is legally valid in England and Wales. We also advise on Scottish law separately, as it differs in certain respects.</div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" aria-expanded="false" id="faq-2" aria-controls="faq-2-a">
+              How long does the whole process take?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-a" id="faq-2-a" role="region" aria-labelledby="faq-2">
+              <div class="faq-a-inner">For life insurance, many customers get an instant decision and have their policy active within an hour. For will writing, most people complete the process within 3–5 working days — that includes your free consultation, drafting, review, and signing. For more complex estate plans, allow 2–3 weeks.</div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" aria-expanded="false" id="faq-3" aria-controls="faq-3-a">
+              Is my personal data safe?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-a" id="faq-3-a" role="region" aria-labelledby="faq-3">
+              <div class="faq-a-inner">Absolutely. Victor Ballestra uses bank-grade 256-bit encryption for all personal and financial data. We are registered with the Information Commissioner's Office (ICO), comply fully with UK GDPR, and never sell your data to third parties. Your documents are stored on UK servers.</div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" aria-expanded="false" id="faq-4" aria-controls="faq-4-a">
+              Can I update my will later if things change?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-a" id="faq-4-a" role="region" aria-labelledby="faq-4">
+              <div class="faq-a-inner">Yes — and we actively encourage it. Life changes, and your will should reflect that. Victor Ballestra customers on the Protect &amp; Plan or Legacy plans can update their will through their online account at no extra cost. We also send an annual reminder to prompt you to review it.</div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" aria-expanded="false" id="faq-5" aria-controls="faq-5-a">
+              What happens if I die without a will?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-a" id="faq-5-a" role="region" aria-labelledby="faq-5">
+              <div class="faq-a-inner">Without a will, you die "intestate" and your estate is divided according to strict legal rules — which may not reflect your wishes at all. Unmarried partners receive nothing, no matter how long you've been together. Specific gifts to friends or charities are ignored. Writing a will is the only way to make sure what you've built goes where you intend.</div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" aria-expanded="false" id="faq-6" aria-controls="faq-6-a">
+              Do I need life insurance if I already have cover through work?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-a" id="faq-6-a" role="region" aria-labelledby="faq-6">
+              <div class="faq-a-inner">Death-in-service benefits through work are a useful starting point, but they come with important limitations: cover typically ends when you change employer, is usually capped at 3–4x your salary, and doesn't cover serious illness. We'll review what you already have and tell you honestly whether it's enough — or if there's a gap worth filling.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FINAL CTA
+  ════════════════════════════════════════════ -->
+  <section class="cta-section" id="quote" aria-labelledby="cta-heading">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb-1" style="opacity:0.4;"></div>
+      <div class="orb orb-2" style="opacity:0.3;"></div>
+    </div>
+    <div class="container cta-inner gsap-fade-up">
+      <p class="eyebrow" style="color:var(--sage-lt);">Get started today</p>
+      <h2 class="cta-headline" id="cta-heading">
+        The best time to protect<br>
+        your family was yesterday.<br>
+        <strong>The second best time is now.</strong>
+      </h2>
+      <p class="cta-sub">A free 30-minute call. No obligation. No pressure. Just a honest conversation about what protection looks like for you.</p>
+      <a href="tel:08001234567" class="btn btn-gold" style="font-size:1.05rem; padding:1.1rem 2.5rem;">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="margin-right:4px;">
+          <path d="M3 3h3l1.5 4L6 8.5c1.2 2.4 3.1 4.3 5.5 5.5L13 12.5l4 1.5v3C17 17 13.5 18 9 18 4.5 18 1 13 1 9 1 5.5 2 3 3 3Z" stroke="white" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        </svg>
+        Book a free call
+      </a>
+      <p class="cta-note">Or call us on <a href="tel:08001234567" style="color:rgba(235,243,255,0.55);">0800 123 4567</a> — Monday to Friday, 9am to 6pm</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo" aria-label="Victor Ballestra — home">
+            <svg width="28" height="32" viewBox="0 0 32 36" fill="none" aria-hidden="true">
+              <path d="M16 2C16 2 28 6 28 14C28 24 16 34 16 34C16 34 4 24 4 14C4 6 16 2 16 2Z" fill="none" stroke="#4B87C5" stroke-width="1.5"/>
+              <path d="M16 28V14M10 20C12 18 14 17 16 16M22 20C20 18 18 17 16 16" stroke="#B8904A" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="10.5" cy="19" r="2.5" fill="#B8904A" opacity="0.7"/>
+              <circle cx="21.5" cy="19" r="2.5" fill="#B8904A" opacity="0.7"/>
+              <circle cx="16" cy="12" r="3" fill="#B8904A"/>
+            </svg>
+            Victor Ballestra
+          </a>
+          <p>Life insurance, will writing, and estate planning — made human. Protecting UK families since 2018.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Life Insurance</a></li>
+            <li><a href="#services">Will Writing</a></li>
+            <li><a href="#services">Estate Planning</a></li>
+            <li><a href="#services">Lasting Power of Attorney</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Victor Ballestra</a></li>
+            <li><a href="#">Our advisers</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Help &amp; Legal</h4>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Cookie settings</a></li>
+            <li><a href="#">Complaints procedure</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          Victor Ballestra Financial Services Ltd is authorised and regulated by the Financial Conduct Authority (FRN: 123456). Registered in England &amp; Wales (Company No: 09876543). Registered office: 14 Elm Row, London, EC1A 2BT. Will writing services are not regulated by the FCA. Your home may be at risk if you do not keep up repayments on a mortgage or other debt secured on it.
+        </p>
+        <p class="footer-copyright">© 2025 Victor Ballestra Financial Services Ltd</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS — GSAP, ScrollTrigger, Lenis
+  ════════════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* ─── Reduced-motion guard ─── */
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ════════════════════════════════════════
+       1. LENIS SMOOTH SCROLL
+    ════════════════════════════════════════ */
+    let lenis;
+    if (!prefersReduced && typeof Lenis !== 'undefined') {
+      lenis = new Lenis({
+        duration: 1.15,
+        easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+        smooth: true,
+        smoothTouch: false,
+      });
+
+      function lenisRaf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(lenisRaf);
+      }
+      requestAnimationFrame(lenisRaf);
+
+      // Connect Lenis to GSAP ticker
+      if (typeof gsap !== 'undefined') {
+        gsap.ticker.add(function(time) { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+      }
+    }
+
+    /* ════════════════════════════════════════
+       2. NAV — shrink on scroll
+    ════════════════════════════════════════ */
+    var nav = document.getElementById('nav');
+    var scrollThreshold = 80;
+
+    function updateNav() {
+      if (window.scrollY > scrollThreshold) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    /* ════════════════════════════════════════
+       3. MOBILE MENU
+    ════════════════════════════════════════ */
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobile-menu');
+    var mobileLinks = mobileMenu.querySelectorAll('a');
+    var menuOpen = false;
+
+    function openMenu() {
+      menuOpen = true;
+      mobileMenu.classList.add('open');
+      mobileMenu.removeAttribute('aria-hidden');
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', function() {
+      menuOpen ? closeMenu() : openMenu();
+    });
+
+    mobileLinks.forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    /* ════════════════════════════════════════
+       4. FAQ ACCORDION
+    ════════════════════════════════════════ */
+    var faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(function(item) {
+      var btn = item.querySelector('.faq-q');
+      var answer = item.querySelector('.faq-a');
+
+      btn.addEventListener('click', function() {
+        var isOpen = item.classList.contains('open');
+
+        // Close all
+        faqItems.forEach(function(i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          i.querySelector('.faq-a').style.maxHeight = '0';
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          var inner = answer.querySelector('.faq-a-inner');
+          answer.style.maxHeight = inner.scrollHeight + 24 + 'px';
+        }
+      });
+    });
+
+    /* ════════════════════════════════════════
+       5. TESTIMONIALS CAROUSEL
+    ════════════════════════════════════════ */
+    var track = document.getElementById('carousel-track');
+    var dots = document.querySelectorAll('.dot');
+    var prevBtn = document.getElementById('prev-btn');
+    var nextBtn = document.getElementById('next-btn');
+    var slideCount = 5;
+    var currentSlide = 0;
+    var autoTimer;
+
+    function goToSlide(n) {
+      currentSlide = ((n % slideCount) + slideCount) % slideCount;
+      track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+      dots.forEach(function(d, i) {
+        d.classList.toggle('active', i === currentSlide);
+        d.setAttribute('aria-selected', i === currentSlide ? 'true' : 'false');
+      });
+    }
+
+    function startAuto() {
+      autoTimer = setInterval(function() {
+        goToSlide(currentSlide + 1);
+      }, 5500);
+    }
+
+    function stopAuto() { clearInterval(autoTimer); }
+
+    prevBtn.addEventListener('click', function() { stopAuto(); goToSlide(currentSlide - 1); startAuto(); });
+    nextBtn.addEventListener('click', function() { stopAuto(); goToSlide(currentSlide + 1); startAuto(); });
+
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        stopAuto();
+        goToSlide(parseInt(dot.dataset.index, 10));
+        startAuto();
+      });
+    });
+
+    var carouselWrapper = document.querySelector('.carousel-wrapper');
+    carouselWrapper.addEventListener('mouseenter', stopAuto);
+    carouselWrapper.addEventListener('mouseleave', startAuto);
+    carouselWrapper.addEventListener('focusin', stopAuto);
+    carouselWrapper.addEventListener('focusout', startAuto);
+
+    if (!prefersReduced) {
+      startAuto();
+    }
+
+    /* ════════════════════════════════════════
+       6. GSAP ANIMATIONS
+    ════════════════════════════════════════ */
+    if (typeof gsap === 'undefined' || prefersReduced) {
+      // Make all elements visible without animation
+      document.querySelectorAll('.gsap-fade-up, .hero-word').forEach(function(el) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+      return; // Skip all GSAP setup
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* ── Hero entrance timeline ── */
+    var heroTL = gsap.timeline({ delay: 0.2 });
+
+    // Headline word-by-word reveal
+    heroTL.to('.hero-word', {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      stagger: 0.12,
+      ease: 'power3.out',
+    });
+
+    heroTL.to('.hero-sub', {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+    }, '-=0.3');
+
+    heroTL.to('.hero-ctas', {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+    }, '-=0.35');
+
+    heroTL.to('.hero-trust', {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: 'power2.out',
+    }, '-=0.3');
+
+    /* ── Shield SVG draw-on animation ── */
+    var shieldPaths = document.querySelectorAll('.draw-shield');
+    shieldPaths.forEach(function(path) {
+      var len = path.getTotalLength ? path.getTotalLength() : 1000;
+      gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
+    });
+
+    heroTL.to(shieldPaths, {
+      strokeDashoffset: 0,
+      duration: 1.8,
+      stagger: 0.4,
+      ease: 'power2.inOut',
+    }, 0.3);
+
+    // Roots draw
+    var rootPaths = document.querySelectorAll('.draw-root');
+    rootPaths.forEach(function(path) {
+      var len = path.getTotalLength ? path.getTotalLength() : 200;
+      gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
+    });
+
+    heroTL.to(rootPaths, {
+      strokeDashoffset: 0,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power2.out',
+    }, 1.2);
+
+    // Trunk
+    var trunk = document.querySelector('.draw-trunk');
+    if (trunk) {
+      var trunkLen = trunk.getTotalLength();
+      gsap.set(trunk, { strokeDasharray: trunkLen, strokeDashoffset: trunkLen });
+      heroTL.to(trunk, { strokeDashoffset: 0, duration: 0.8, ease: 'power2.out' }, 1.5);
+    }
+
+    // Branches
+    var branches = document.querySelectorAll('.draw-branch');
+    branches.forEach(function(b) {
+      var len = b.getTotalLength ? b.getTotalLength() : 100;
+      gsap.set(b, { strokeDasharray: len, strokeDashoffset: len });
+    });
+
+    heroTL.to(branches, {
+      strokeDashoffset: 0,
+      duration: 0.6,
+      stagger: 0.08,
+      ease: 'power1.out',
+    }, 2.0);
+
+    // Leaves
+    gsap.set('.draw-leaf', { opacity: 0, scale: 0, transformOrigin: 'center' });
+    heroTL.to('.draw-leaf', {
+      opacity: 1,
+      scale: 1,
+      duration: 0.4,
+      stagger: 0.07,
+      ease: 'back.out(1.4)',
+    }, 2.5);
+
+    /* ── Scroll-triggered: How It Works SVG connector ── */
+    var connPath = document.getElementById('connector-path');
+    if (connPath) {
+      var connLen = connPath.getTotalLength();
+      gsap.set(connPath, { strokeDasharray: connLen, strokeDashoffset: connLen });
+
+      ScrollTrigger.create({
+        trigger: '.how-section',
+        start: 'top 65%',
+        end: 'center 40%',
+        scrub: 1.5,
+        onUpdate: function(self) {
+          connPath.style.strokeDashoffset = connLen * (1 - self.progress);
+        },
+      });
+    }
+
+    /* ── Scroll-triggered: stat counters ── */
+    var statEls = document.querySelectorAll('.stat-number[data-target]');
+
+    statEls.forEach(function(el) {
+      var target = parseInt(el.dataset.target, 10);
+      var suffix = el.dataset.suffix || '';
+      var separator = el.dataset.separator || '';
+      var displayAs = el.dataset.displayAs;
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 85%',
+        once: true,
+        onEnter: function() {
+          gsap.to({ val: 0 }, {
+            val: target,
+            duration: 2,
+            ease: 'power2.out',
+            onUpdate: function() {
+              var v = Math.round(this.targets()[0].val);
+              var display;
+              if (displayAs) {
+                // e.g. 49 → "4.9"
+                display = (v / 10).toFixed(1);
+              } else if (separator && v >= 1000) {
+                display = v.toLocaleString('en-GB');
+              } else {
+                display = v;
+              }
+              el.textContent = display + suffix;
+            },
+          });
+        },
+      });
+    });
+
+    /* ── Scroll-triggered: generic fade-up reveals ── */
+    var fadeEls = document.querySelectorAll('.gsap-fade-up');
+
+    fadeEls.forEach(function(el) {
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 88%',
+        once: true,
+        onEnter: function() {
+          gsap.to(el, {
+            opacity: 1,
+            y: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+          });
+        },
+      });
+    });
+
+    /* ── Staggered groups: service cards, why cards, steps ── */
+    function staggerGroup(selector, staggerDelay) {
+      var groups = {};
+      document.querySelectorAll(selector).forEach(function(el) {
+        var parent = el.parentElement;
+        if (!groups[parent]) groups[parent] = [];
+        groups[parent].push(el);
+      });
+
+      Object.values(groups).forEach(function(els) {
+        ScrollTrigger.create({
+          trigger: els[0],
+          start: 'top 85%',
+          once: true,
+          onEnter: function() {
+            gsap.to(els, {
+              opacity: 1,
+              y: 0,
+              duration: 0.65,
+              stagger: staggerDelay || 0.1,
+              ease: 'power3.out',
+            });
+          },
+        });
+      });
+    }
+
+    staggerGroup('.service-card', 0.12);
+    staggerGroup('.why-card', 0.09);
+    staggerGroup('.step', 0.15);
+    staggerGroup('.pricing-card', 0.12);
+
+    /* ── Smooth nav link scroll (Lenis-compatible) ── */
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -80, duration: 1.2 });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+  }());
+  </script>
+
+</body>
+</html>
